@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSLC Grade Entry</title>
+    <style>
+        body {
+            background-color: #cce6ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .form-container {
+            background-color: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        input, label {
+            display: block;
+            width: 250px;
+            margin: 8px auto;
+            padding: 8px;
+        }
+        input[type="text"] {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007acc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        h2 {
+            color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SSLC PERCENTAGE CALCULATOR</h1>
+    <div class="form-container">
+        <h2>Enter Your SSLC Grade </h2>
+        <form method = "POST">
+            <label for="first_language">First Language</label>
+            <input type="text" name="first_language" value="{{ request.form.first_language }}" required>
+
+            <label for="second_language">Second Language</label>
+            <input type="text" name="second_language" value="{{ request.form.second_language }}" required>
+
+            <label for="english">English</label>
+            <input type="text" name="english" value="{{ request.form.english }}" required>
+
+            <label for="hindi">Hindi</label>
+            <input type="text" name="hindi" value="{{ request.form.hindi }}" required>
+
+            <label for="social_science">Social Science</label>
+            <input type="text" name="social_science" value="{{ request.form.social_science }}" required>
+
+            <label for="physics">Physics</label>
+            <input type="text" name="physics" value="{{ request.form.physics }}" required>
+
+            <label for="chemistry">Chemistry</label>
+            <input type="text" name="chemistry" value="{{ request.form.chemistry }}" required>
+
+            <label for="biology">Biology</label>
+            <input type="text" name="biology" value="{{ request.form.biology }}" required>
+
+            <label for="mathematics">Mathematics</label>
+            <input type="text" name="mathematics" value="{{ request.form.mathematics }}" required>
+
+            <label for="it">Information Technology</label>
+            <input type="text" name="it" value="{{ request.form.it }}" required>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if total is not none %}
+        <h3>
+            Your Mark percentage {{ percentage }} %
+        </h3>
+        {% endif %}
+    </div>
+
+</body>
+</html>
